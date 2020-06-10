@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SILab2Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-06-10T14:34:06" hostname="LAPTOP-0R79K14R" time="0.017">
+<testsuite name="SILab2Test" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-06-10T19:51:08" hostname="LAPTOP-0R79K14R" time="2608.89">
   <properties/>
-  <testcase name="EveryBranch()" classname="SILab2Test" time="0.016"/>
-  <testcase name="MultipleConditions()" classname="SILab2Test" time="0.0"/>
+  <testcase name="EveryBranch()" classname="SILab2Test" time="2608.89">
+    <skipped/>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
