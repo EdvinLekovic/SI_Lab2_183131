@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'SI_Lab2_183131'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test{
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2");
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.6.2")
+}
