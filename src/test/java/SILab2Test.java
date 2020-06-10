@@ -28,19 +28,25 @@ class SILab2Test {
         assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj"),Collections.emptyList()));
         //2.(T && F) i tuka e istoto razgranuvanje
         assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj@gmailcom"),Collections.emptyList()));
-        //3 (T && T) ovde ni se menuva razgranuvanjeto vo I-J
+        //3. (T && T) ovde ni se menuva razgranuvanjeto vo I-J
         assertTrue(siLab2.function(new User("Edvin","SuperSum123","edvin.lekovikj@students.finki.ukim.mk"),Arrays.asList("Sarko","Darko","Marko")));
     }
 
     @Test
     public void EveryBranch(){
-        //1. So ovoj assert gi opfakjame slednive granki: A-B , B-C1 , C1-C2 , C2-D , C2-I , D-E , E-F , F-G , G-H , H-C3 , C3-C2 и I-J i programata zavrsuva kako tocna
+        //1. A-B1 , B1-B2 , B2-B3 , B3-C1 , C1-C2 , C2-D ,C2-I1 , D-E , E-F , F-G , G-H , H-C3 , C3-C2 , I1-I2 , I2-J
         assertTrue(siLab2.function(new User("Edvin", "SuperSum123", "edvin.lekovikj@students.finki.ukim.mk"), Arrays.asList("Darko","Sarko","Marko")));
-        //2. So ovoj assert ja opfakjame samo grankata A-K
+        //2. A-K
         assertFalse(siLab2.function(null, null));
-        //3. Od ovoj primer gi razgranuvame grankite: A-B i B-K
-        assertFalse(siLab2.function(new User("Edvin",null,null),null));
-        //4. Vo ovoj primer gi razgranuvame grankite: A-B , B-C1 , C1-C2 , C2-D , C2-I , D-F , F-H, H-C3 , C3-C2 i I-K
+        //3. A-B1 , B1-K
+        assertFalse(siLab2.function(new User(null,null,null),Collections.emptyList()));
+        //4. A-B1 , B1-B2 , B2-K
+        assertFalse(siLab2.function(new User("Edvin",null,null),Collections.emptyList()));
+        //5. A-B1 , B1-B2 , B2-B3 , B3-K
+        assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvin.lekovikj@students.finki.ukim.mk"),Arrays.asList("Edvin","Darko","Sarko")));
+        //6. A-B1 , B1-B2 , B2-B3 , B3-C1 , C1-C2 , C2-D , C2-I1 , D-F , F-H , C3-C2 , I1-K
         assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj"),Collections.emptyList()));
+        //7. A-B1 , B1-B2 , B2-B3 , B3-C1 , C1-C2 , C2-D , C2-I1 , D-E , E-F , F-H , H-C3 , C3-C2 , I1-I2 , I2-K
+        assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvin@lekovikj"),Collections.emptyList()));
     }
 }
