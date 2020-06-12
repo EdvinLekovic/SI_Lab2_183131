@@ -7,7 +7,7 @@
 
 ### Control Flow Graph
 
-![alt text](https://github.com/EdvinLekovic/SI_Lab2_183131/blob/master/Control%20Flow%20Graph%20Group%201.png)
+![alt text](https://github.com/EdvinLekovic/SI_Lab2_183131/blob/master/Control%20Flow%20Diagram%20Group%201.png)
 
 
 ### Цикломатска комплексност 
