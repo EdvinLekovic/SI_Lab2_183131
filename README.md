@@ -18,6 +18,7 @@
 ### Тест случаи според критериумот Multiple Conditions
 
 ----Multiple Condition 1 ----
+
 Првиот Multiple Conditional ни е (user.getUsername()!=null && user.getEmail()!=null && !allUsers.contains(user.getUsername()))
 Во овој код ги имаме следните можни комбинации кој можат да настанат за дадениот код:
 
@@ -30,6 +31,7 @@
 4.TTT -> user.getUsername() = "Edvin" ; user.getEmail() = "edvin.lekovikj@students.finki.ukim.mk" ; allUsers.contains(user.getUsername()) = false 
 
 ----Multiple Condition 2 ----
+
 Вториот Multiple Condition ни е (atChar && dotChar)
 И за овој multiple condition ги имаме следните комбинации кој можат да настанат за овој услов:
 
@@ -62,6 +64,7 @@
 ### Oбјаснување на напишаните unit tests
 
 ----Multiple Condition----
+
 За multiple condition во нашиот код имаме 2 multiple conditions од кој едниот е 
 (user.getUsername()!=null && user.getEmail()!=null && !allUsers.contains(user.getUsername()))
 
