@@ -1,5 +1,7 @@
 import org.graalvm.compiler.replacements.SnippetTemplate;
 import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,13 +36,19 @@ class SILab2Test {
 
     @Test
     public void EveryBranch(){
-        //1. A-B , B-C1 , C1-C2 , C2-D , D-E , E-F , F-G , G-C3 , C3-C2 , C2-I , I-J
+        //1. A0,A1-B1 ; B1-B2 ; B2-B3 ; B3-C0,C1 ; C0,C1-C2 ; C2-D ; C2-I1 ; D-E ; D-F ; E-F ; F-G ; F-H ; G-H ; H-C3 ; C3-C2 ; I1-I2 ; I2-J ; J-L
         assertTrue(siLab2.function(new User("Edvin","SuperSum123","edvin.lekovikj@students.finki.ukim.mk"),Collections.emptyList()));
-        //2. A-K
+        //2. A0,A1-K ; K-L
         assertFalse(siLab2.function(null,null));
-        //3. A-B , B-K
-        assertFalse(siLab2.function(new User("Edvin","superSum123",null),Collections.emptyList()));
-        //4. A-B , B-C1 , C1-C2 , C2-D , D-F , F-C3 , C2-I , I-K
-        assertFalse(siLab2.function(new User("Edvin","SuperSUm123","edvinlekovikj"),Arrays.asList("Darko","Vlatko","Ratko")));
+        //3. A0,A1-B1 ; B1-K ; K-L
+        assertFalse(siLab2.function(new User(null,null,null),null));
+        //4. A0,A1-B1 ; B1-B2 ; B2-K ; K-L
+        assertFalse(siLab2.function(new User("Edvin","SuperSum123",null),null));
+        //5. A0,A1-B1 ; B1-B2 ; B2-B3 ; B3-K ; K-L
+        assertFalse(siLab2.function(new User("Edvin","SuperSUm123","edvin.lekovikj@students.finki.ukim.mk"),Arrays.asList("Edvin","Darko","Sarko")));
+        //6. A0,A1-B1 ; B1-B2 ; B2-B3 ; B3-C0,C1 ; C0,C1-C2 ; C2-D ; C2-I1 ; D-F ; F-H ; H-C3 ; C3-C2 ; I1-K ; K-L
+        assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj"),Collections.emptyList()));
+        //7. A0,A1-B1 ; B1-B2 ; B2-B3 ; B3-C0,C1 ; C0,C1-C2 ; C2-D ; C2-I1 ; D-E ; D-F ; E-F ; F-H ; H-C3 ; C3-C2 ; I1-I2 ; I2-K ; K-L
+        assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj@studentsfinkiukimmk"), Arrays.asList("Darko","Sarko","Marko")));
     }
 }

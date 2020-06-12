@@ -27,9 +27,9 @@ class User {
 
 public class SILab2 {
 
-    public boolean function (User user, List<String> allUsers) { //A //User("Edvin","SuperSum123","edvin.lekovikj@students.finki.ukim.mk") [Sarko,Marko,Farko]
+    public boolean function (User user, List<String> allUsers) { //A
         if (user!=null) { //A
-            if (user.getUsername()!=null && user.getEmail()!=null && !allUsers.contains(user.getUsername())) { //B
+            if (user.getUsername()!=null && user.getEmail()!=null && !allUsers.contains(user.getUsername())) { //user.getUsername -> B1 ; user.getEmail -> B2 ; allUsers.contains(user.getUsername()) -> B3
                 boolean atChar = false, dotChar = false; //C1
                 for (int i=0;i<user.getEmail().length();i++) { //int i=0 -> C1 ; i<user.getEmail().length() -> C2 ; i++ -> C3
                     if (user.getEmail().charAt(i)=='@') //D
@@ -44,7 +44,7 @@ public class SILab2 {
             }
         }
         return false; //K
-    }
+    } //L
 
 
 
