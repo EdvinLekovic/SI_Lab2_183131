@@ -26,9 +26,9 @@
 
 2. TFX -> user.getUsername() = "Edvin" ; user.getEmail() = null ; X (небитно) ;
 
-3.TTF -> user.getUsername() = "Edvin" ; user.getEmail() = "edvin.lekovikj@students.finki.ukim.mk" ; allUsers.contains(user.getUsername()) = true 
+3. TTF -> user.getUsername() = "Edvin" ; user.getEmail() = "edvin.lekovikj@students.finki.ukim.mk" ; allUsers.contains(user.getUsername()) = true 
 
-4.TTT -> user.getUsername() = "Edvin" ; user.getEmail() = "edvin.lekovikj@students.finki.ukim.mk" ; allUsers.contains(user.getUsername()) = false 
+4. TTT -> user.getUsername() = "Edvin" ; user.getEmail() = "edvin.lekovikj@students.finki.ukim.mk" ; allUsers.contains(user.getUsername()) = false 
 
 ----Multiple Condition 2 ----
 
@@ -37,9 +37,9 @@
 
 1. FX -> atChar = false ; X (Небитно)
 
-2.TF -> atChar = true ; dotChar = false
+2. TF -> atChar = true ; dotChar = false
 
-3.ТТ -> atChar = true ; dotChar = true
+3. ТТ -> atChar = true ; dotChar = true
 
 ### Тест случаи според критериумот Every Branch 
 
@@ -57,9 +57,9 @@
 
 5. Users(username="Edvin",password="не битно",email="edvin.lekovikj@students.finki.ukim.mk") , allUsers = полна листа која го содржи името како и на објектот User.
 
-6.User(username="Edvin",password="не битно",email="edvinlekovikj") и за allUsers = emptyList или полна листа која не го содржи username-от на User-от.
+6. User(username="Edvin",password="не битно",email="edvinlekovikj") и за allUsers = emptyList или полна листа која не го содржи username-от на User-от.
 
-7.User(username="Edvin",password="не битно",email="edvinlekovikj@studentsfinkiukimmk") и за allUsers = emptyList или полна листа која не го содржи username-от на User-от.
+7. User(username="Edvin",password="не битно",email="edvinlekovikj@studentsfinkiukimmk") и за allUsers = emptyList или полна листа која не го содржи username-от на User-от.
 
 ### Oбјаснување на напишаните unit tests
 
@@ -85,16 +85,16 @@ assertFalse(siLab2.function(new User("Edvin",null,null),null)); Кај Userot п
 Другиот multiple condition ни е изразот atChar && dotChar
 Во овој condition имаме 3 комбинации кој можат да се случат со овој израз
 
-1.(F && X) првата комбинација е кога првиот израз atChar ја има вредноста false со тоа другиот израз нема потреба да го проверуваме будејки целиот услов ќе биде false и поради таа причина за вториот израз ставаме Х.
+1. (F && X) првата комбинација е кога првиот израз atChar ја има вредноста false со тоа другиот израз нема потреба да го проверуваме будејки целиот услов ќе биде false и поради таа причина за вториот израз ставаме Х.
         assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj"),Collections.emptyList()));
 Гледаме дека во кодот мора сите аргументи мора да ни бидат соодветно иницијализирани за објектот User но е-маилот треба да биде без точка и без @  и треба дадената листа да биде или празна или да не го сочинува username-от што се наоѓа во објектот User.
 Разгранувањето тука ќе ни биде I1-K
 
-2.(T && F) во овој израз може да погледнеме дека првиот израз atChar ни е true но вториот израз dotChar ни е false поради таа причина целиот израз повторно ни е false.
+2. (T && F) во овој израз може да погледнеме дека првиот израз atChar ни е true но вториот израз dotChar ни е false поради таа причина целиот израз повторно ни е false.
         assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj@gmailcom"),Collections.emptyList()));
 Во овој израз како и во претходниот треба сите аргументи од класата User да ни бидат иницијализирани но за е-маилот треба да имаме @ но да немаме точка и исто како и за претходниот случај е правилото за листата дека треба да биде или празна или да биде наполнета но да не го сочинува името што се наоѓа во објектот User. Разгранувањата за овој тест случај ќе бидат I1-I2 и I2-K
 
-3.(T && Т) во овој услов и двата израза ни се вистинити со што целиот услов е вистинит со тоа би можеле да навлеземе во дадениот if
+3. (T && Т) во овој услов и двата израза ни се вистинити со што целиот услов е вистинит со тоа би можеле да навлеземе во дадениот if
         assertTrue(siLab2.function(new User("Edvin","SuperSum123","edvin.lekovikj@students.finki.ukim.mk"),Arrays.asList("Sarko","Darko","Marko")));
 Сите аргументи се валидно пратени во User објектот со тоа што во овој случај во е-маилот имаме и точка и @ а за листата важи истото правило. Разгранувањата тука ни се I1-I2 и I2-J
 
@@ -113,15 +113,15 @@ assertFalse(siLab2.function(new User("Edvin",null,null),null)); Кај Userot п
 3. assertFalse(siLab2.function(new User(null,null,null),null));
 Овој тест случај иницијализираме првата вредност null а останатите не ни се битни како ќе ги иницијализираме бидејки како и да ги иницијализираме програмата ќе го има истото разгранување кое е A0,A1-B1 ; **B1-K** ; K-L
 
-4.assertFalse(siLab2.function(new User("Edvin","SuperSum123",null),null));
+4. assertFalse(siLab2.function(new User("Edvin","SuperSum123",null),null));
 Во овој тест случај како аргументи за објектот User праќаме username , password не е битен и аргументот за мејлот да биде null и листата allUsers не е битно што ќе и дадеме како аргумент.
 Се изминуваат ребрата A0,A1-B1 ; B1-B2 ; **B2-K** ; K-L
 
-5.assertFalse(siLab2.function(new User("Edvin","SuperSUm123","edvin.lekovikj@students.finki.ukim.mk"),Arrays.asList("Edvin","Darko","Sarko")));
+5. assertFalse(siLab2.function(new User("Edvin","SuperSUm123","edvin.lekovikj@students.finki.ukim.mk"),Arrays.asList("Edvin","Darko","Sarko")));
 Во овој тест случај програмата треба да се аргументите за User-от да бидат валидни а за allUsers да пратиме листа која ќе го сочинува името на корисникот.
 Со овие аргументи сега фунцијата ни се разгранува A0,A1-B1 ; B1-B2 ; B2-B3 ; **B3-K** ; K-L
 
-6.assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj"),Collections.emptyList()));
+6. assertFalse(siLab2.function(new User("Edvin","SuperSum123","edvinlekovikj"),Collections.emptyList()));
 Во овој тест случај ни е битен само аргументот за email на објектот User го ставаме да биде грешен со што немаме нитѕ @ ниту точка се со цел да ги опфатиме не разгранетите гранки.
 Се опфаќаат гранките  A0,A1-B1 ; B1-B2 ; B2-B3 ; B3-C0,C1 ; C0,C1-C2 ; C2-D ; C2-I1 ; D-F ; F-H ; H-C3 ; C3-C2 ; **I1-K** ; K-L
 
